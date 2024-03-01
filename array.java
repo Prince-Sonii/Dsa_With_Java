@@ -1,23 +1,19 @@
 import java.util.Arrays;
-
+import java.util.Scanner;
 public class array {
     public static void main(String[] args) {
-        //array accessing elements by for each loop
-        /*int [] arr = {1,2,3,4,5,6,7};
-        for(int element:arr) {
-            System.out.println(element);
-            */
-        // sorting an array then findind index of given number
-        int [] myArray = {10,2,55,67,32,12};
-        //sorting of aaray
-        Arrays.sort(myArray);
-        int toFindIndexOf = 55;
-        int indexValue = Arrays.binarySearch(myArray,toFindIndexOf);
-        if (indexValue<0) {
-            System.out.println("Given value is not present in array");
+        Scanner sc = new Scanner(System.in);
+        int [][] array = new int[3][3];
+
+        // for taking input we will use for loop
+        System.out.println("enter you input:");
+        for (int i=0;i<array.length;i++) {
+            for (int j=0;j<3;j++) {
+                array[i][j] = sc.nextInt();
+            }
         }
-        else {
-            System.out.println(toFindIndexOf + "'s index is = " + indexValue);
-        }
-    }
-}
+
+       for (int[] n:array) {
+           System.out.println(Arrays.toString(n));
+       }
+    }}
