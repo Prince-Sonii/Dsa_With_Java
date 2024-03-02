@@ -14,39 +14,37 @@ public class BinarySearch {
     static int BinarySearch(int[] array, int target) {
         int start = 0;
         int end = array.length - 1;
-        // checking if the array is in ascending order
-        if (array[0]<array[end]) {
-            //code for ascending order array
-            while (start <= end) {
-                int middle = start + (end - start) / 2;
-                if (target < array[middle]) {
+        boolean isAsc = array[start]<array[end];
+
+        while (start <= end) {
+            int middle = start + (end - start) / 2;
+            if (target==array[middle]) {
+                return middle;
+            }
+            if (isAsc) {
+                if (target<array[middle]) {
                     end = middle - 1;
-                } else if (target > array[middle]) {
+                }else {
                     start = middle + 1;
-                } else {
-                    return middle;
                 }
             }
-        }
-        else{
-            /*if this block of code will execute then it means the array is
-                    in descending order
-                    and here is the code for descending order array
-                    */
-            while (start <= end) {
-                int middle = start + (end - start) / 2;
+            else{
                 if (target < array[middle]) {
                     start = middle+1;
-                } else if (target > array[middle]) {
+                }else {
                     end = middle-1;
-                } else {
-                    return middle;
                 }
             }
 
+            }
+        return -1;
         }
 
-        return -1;
+
+
+
+
+
     }
-}
+
 
