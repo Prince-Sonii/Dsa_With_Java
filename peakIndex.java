@@ -9,7 +9,7 @@ public class peakIndex {
 
         int start = 0;
         int end= arr.length-1;
-        while(start<=end) {
+        while(start<end) {
             int mid = start+(end-start)/2;
             if(arr[mid]>arr[mid+1]) {
                 end =mid;
@@ -17,13 +17,10 @@ public class peakIndex {
             else {
                 start = mid+1;
             }
-            if(start==end) {
-                mid = start+(end-start)/2;
-                return mid;
-            }
 
         }
-        return -1;
+        // we can return start as well as end because both are equal as the loop ends
+        return start;
 
     }
 }
