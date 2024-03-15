@@ -2,12 +2,12 @@ import java.util.Arrays;
 
 public class bubbleSort {
     public static void main(String[] args) {
-        int []array = {1,5,2,4,3};
+        int []array = {5,4,3,2,1};
         sorting(array);
         System.out.println(Arrays.toString(array));
     }
     static void sorting(int[]array) {
-        int length = array.length-1;
+        int length = array.length;
         while(length>0) {
             boolean ifSwapped = false;
             for (int i=1;i<length;i++) {
