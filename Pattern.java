@@ -1,6 +1,6 @@
 public class Pattern {
     public static void main(String[] args) {
-        rhombus(4);
+        emptyRhombus(4);
     }
     static void patternTriangle(int n) {
        /*
@@ -152,6 +152,23 @@ public class Pattern {
             System.out.println();
     }
 
+    }
+    static void emptyRhombus(int n) {
+        for (int row = 1; row < 2 * n; row++) {
+            int spaces = n > row ? n - row : row - n;
+            for (int sp =1;sp<=spaces;sp++) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            int space2 = n>=row?row-1:2*n-row-1;
+            for (int sp2 =1;sp2<=2*space2;sp2++) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+
+            System.out.println();
+            }
+        }
 
 
-}}
+    }
