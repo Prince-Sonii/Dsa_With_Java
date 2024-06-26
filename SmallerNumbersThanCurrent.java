@@ -7,17 +7,20 @@ class SmallerNumbersThanCurrent {
     }
     //solution
     static int[] smallerNumbersThanCurrent(int[] nums) {
-        int countSmaller = 0;
-        int[] ans = new int[nums.length];
+        int[] arr = new int[101];
         for(int i=0;i<nums.length;i++) {
-            countSmaller = 0;
-            for(int j=0;j<nums.length;j++) {
-                if(nums[i]>nums[j]) {
-                    countSmaller++;
-                }
-            }
-            ans[i]=countSmaller;
+            arr[nums[i]]++;
         }
-        return ans;
+        for(int i=1;i<arr.length;i++) {
+            arr[i] += arr[i-1];
+        }
+        for(int i=0;i<nums.length;i++) {
+            if(nums[i]==0) {
+                nums[i] =0;
+            } else {
+                nums[i] = arr[nums[i]-1];
+            }
+        }
+        return nums;
     }
 }
